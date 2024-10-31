@@ -27,16 +27,19 @@ export class PaymentService {
     value: dto.amount.toFixed(2),
     currency: "RUB",
    },
-   payment_method_data: {
-    type: "bank_card",
-   },
+  //  payment_method_data: {
+  //   type: "bank_card",
+  //  },
+  //  "confirmation": {
+  //   "type": "redirect"
+  // },
    confirmation: {
-    type: "redirect",
-    return_url: "https://0821-89-113-149-57.ngrok-free.app/scan",
+    type: "embedded",
+    // return_url: process.env.REDIRECT_URL,
    },
    description: "Заказ №72",
    capture: true,
-   merchant_customer_id: user._id,
+  //  merchant_customer_id: user._id,
    //  receipt: {
    //   customer: {
    //    full_name: "Иванов Иван Иванович",
@@ -59,6 +62,8 @@ export class PaymentService {
   });
   //if(payment) user.
   if (payment) {
+    console.log('wef!!!PAYm');
+    
 //    user.IdPayment = payment.id;
 //    await user.save();
    return payment;

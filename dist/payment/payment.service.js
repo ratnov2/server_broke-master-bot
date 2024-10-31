@@ -32,18 +32,14 @@ let PaymentService = class PaymentService {
                 value: dto.amount.toFixed(2),
                 currency: "RUB",
             },
-            payment_method_data: {
-                type: "bank_card",
-            },
             confirmation: {
-                type: "redirect",
-                return_url: "https://0821-89-113-149-57.ngrok-free.app/scan",
+                type: "embedded",
             },
             description: "Заказ №72",
             capture: true,
-            merchant_customer_id: user._id,
         });
         if (payment) {
+            console.log('wef!!!PAYm');
             return payment;
         }
     }
