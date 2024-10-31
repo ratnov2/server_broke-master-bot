@@ -27,6 +27,7 @@ export class PaymentService {
     value: dto.amount.toFixed(2),
     currency: "RUB",
    },
+   //
   //  payment_method_data: {
   //   type: "bank_card",
   //  },
